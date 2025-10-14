@@ -1,6 +1,6 @@
 # 🚌 GoTicket — Smart Bus Ticket Booking Assistant
 
-GoTicket is a modern web platform where users can **search and book bus tickets** easily.  
+GoTicket is an modern web platform where users can **search and book bus tickets** easily.  
 It comes with an integrated **Rasa-powered chatbot** that helps users with queries like:
 
 > 💬 “Show me buses from Kanpur to Delhi for tomorrow.”
