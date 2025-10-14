@@ -1,0 +1,10 @@
+version: "3.1"
+
+stories:
+  - story: check bus availability happy path
+    steps:
+      - intent: check_bus_availability
+      - action: bus_form
+      - active_loop: bus_form
+      - active_loop: null
+      - action: utter_submit

@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.env
+
+# Node modules
+frontend/go-ticket-frontend/node_modules/
+frontend/node_modules/
+
+backend/node_modules/
+
+# Rasa
+backend/models/
+backend/.rasa/
+
+# Mac/Windows temp files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,506 @@
+
+version: "3.1"
+
+nlu:
+- regex: date
+  examples: |
+    - \d{1,2}[-/]\d{1,2}[-/]\d{2,4}
+    - \d{1,2}(st|nd|rd|th)?\s*(January|February|March|April|May|June|July|August|September|October|November|December)
+
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+
+- intent: check_bus_availability
+  examples: |
+    - book a bus from [Delhi](source) to [Mumbai](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Mumbai](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Mumbai](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Mumbai](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Mumbai](destination) on [today](date)
+    - buses from [Delhi](source) to [Mumbai](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Mumbai](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Mumbai](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Mumbai](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Mumbai](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Mumbai](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Mumbai](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Mumbai](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Mumbai](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Mumbai](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Mumbai](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Mumbai](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Mumbai](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Mumbai](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Mumbai](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Mumbai](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Mumbai](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Mumbai](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Mumbai](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Mumbai](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Mumbai](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Mumbai](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Mumbai](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Mumbai](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Mumbai](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Mumbai](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Mumbai](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Mumbai](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Mumbai](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Mumbai](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Mumbai](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Mumbai](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Mumbai](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Mumbai](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Mumbai](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Mumbai](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Mumbai](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Pune](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Pune](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Pune](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Pune](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Pune](destination) on [today](date)
+    - buses from [Delhi](source) to [Pune](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Pune](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Pune](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Pune](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Pune](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Pune](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Pune](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Pune](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Pune](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Pune](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Pune](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Pune](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Pune](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Pune](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Pune](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Pune](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Pune](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Pune](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Pune](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Pune](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Pune](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Pune](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Pune](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Pune](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Pune](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Pune](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Pune](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Pune](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Pune](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Pune](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Pune](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Pune](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Pune](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Pune](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Pune](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Pune](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Pune](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Lucknow](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Lucknow](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Lucknow](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Lucknow](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Lucknow](destination) on [today](date)
+    - buses from [Delhi](source) to [Lucknow](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Lucknow](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Lucknow](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Lucknow](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Lucknow](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Lucknow](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Lucknow](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Lucknow](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Lucknow](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Lucknow](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Lucknow](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Lucknow](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Lucknow](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Lucknow](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Lucknow](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Lucknow](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Lucknow](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Lucknow](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Lucknow](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Lucknow](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Lucknow](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Lucknow](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Lucknow](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Lucknow](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Lucknow](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Lucknow](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Lucknow](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Lucknow](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Lucknow](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Lucknow](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Lucknow](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Lucknow](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Lucknow](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Lucknow](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Lucknow](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Lucknow](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Lucknow](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Agra](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Agra](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Agra](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Agra](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Agra](destination) on [today](date)
+    - buses from [Delhi](source) to [Agra](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Agra](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Agra](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Agra](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Agra](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Agra](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Agra](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Agra](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Agra](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Agra](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Agra](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Agra](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Agra](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Agra](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Agra](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Agra](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Agra](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Agra](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Agra](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Agra](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Agra](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Agra](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Agra](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Agra](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Agra](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Agra](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Agra](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Agra](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Agra](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Agra](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Agra](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Agra](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Agra](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Agra](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Agra](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Agra](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Agra](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Chennai](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Chennai](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Chennai](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Chennai](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Chennai](destination) on [today](date)
+    - buses from [Delhi](source) to [Chennai](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Chennai](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Chennai](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Chennai](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Chennai](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Chennai](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Chennai](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Chennai](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Chennai](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Chennai](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Chennai](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Chennai](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Chennai](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Chennai](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Chennai](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Chennai](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Chennai](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Chennai](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Chennai](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Chennai](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Chennai](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Chennai](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Chennai](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Chennai](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Chennai](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Chennai](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Chennai](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Chennai](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Chennai](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Chennai](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Chennai](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Chennai](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Chennai](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Chennai](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Chennai](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Chennai](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Chennai](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Bangalore](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Bangalore](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Bangalore](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Bangalore](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Bangalore](destination) on [today](date)
+    - buses from [Delhi](source) to [Bangalore](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Bangalore](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Bangalore](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Bangalore](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Bangalore](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Bangalore](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Bangalore](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Bangalore](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Bangalore](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Bangalore](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Bangalore](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Bangalore](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Bangalore](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Bangalore](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Bangalore](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Bangalore](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Bangalore](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Bangalore](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Bangalore](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Bangalore](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Bangalore](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Bangalore](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Bangalore](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Bangalore](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Bangalore](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Bangalore](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Bangalore](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Bangalore](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Bangalore](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Bangalore](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Bangalore](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Bangalore](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Bangalore](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Bangalore](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Bangalore](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Bangalore](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Bangalore](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Hyderabad](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Hyderabad](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Hyderabad](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Hyderabad](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Hyderabad](destination) on [today](date)
+    - buses from [Delhi](source) to [Hyderabad](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Hyderabad](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Hyderabad](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Hyderabad](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Hyderabad](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Hyderabad](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Hyderabad](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Hyderabad](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Hyderabad](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Hyderabad](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Hyderabad](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Hyderabad](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Hyderabad](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Hyderabad](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Hyderabad](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Hyderabad](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Hyderabad](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Hyderabad](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Hyderabad](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Hyderabad](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Hyderabad](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Hyderabad](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Hyderabad](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Hyderabad](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Hyderabad](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Hyderabad](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Hyderabad](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Hyderabad](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Hyderabad](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Hyderabad](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Hyderabad](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Hyderabad](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Hyderabad](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Hyderabad](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Hyderabad](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Hyderabad](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Hyderabad](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Vizag](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Vizag](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Vizag](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Vizag](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Vizag](destination) on [today](date)
+    - buses from [Delhi](source) to [Vizag](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Vizag](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Vizag](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Vizag](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Vizag](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Vizag](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Vizag](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Vizag](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Vizag](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Vizag](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Vizag](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Vizag](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Vizag](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Vizag](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Vizag](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Vizag](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Vizag](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Vizag](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Vizag](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Vizag](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Vizag](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Vizag](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Vizag](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Vizag](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Vizag](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Vizag](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Vizag](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Vizag](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Vizag](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Vizag](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Vizag](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Vizag](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Vizag](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Vizag](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Vizag](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Vizag](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Vizag](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Jaipur](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Jaipur](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Jaipur](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Jaipur](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Jaipur](destination) on [today](date)
+    - buses from [Delhi](source) to [Jaipur](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Jaipur](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Jaipur](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Jaipur](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Jaipur](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Jaipur](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Jaipur](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Jaipur](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Jaipur](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Jaipur](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Jaipur](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Jaipur](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Jaipur](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Jaipur](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Jaipur](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Jaipur](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Jaipur](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Jaipur](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Jaipur](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Jaipur](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Jaipur](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Jaipur](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Jaipur](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Jaipur](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Jaipur](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Jaipur](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Jaipur](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Jaipur](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Jaipur](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Jaipur](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Jaipur](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Jaipur](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Jaipur](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Jaipur](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Jaipur](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Jaipur](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Jaipur](destination) on [Sunday](date)?
+    - book a bus from [Delhi](source) to [Kanpur](destination) on [today](date)
+    - show me buses from [Delhi](source) to [Kanpur](destination) on [today](date)
+    - are there buses from [Delhi](source) to [Kanpur](destination) on [today](date)?
+    - find me a bus from [Delhi](source) to [Kanpur](destination) on [today](date)
+    - I need a ticket from [Delhi](source) to [Kanpur](destination) on [today](date)
+    - buses from [Delhi](source) to [Kanpur](destination) on [today](date)
+    - any available buses from [Delhi](source) to [Kanpur](destination) on [today](date)?
+    - book a bus from [Delhi](source) to [Kanpur](destination) on [tomorrow](date)
+    - show me buses from [Delhi](source) to [Kanpur](destination) on [tomorrow](date)
+    - are there buses from [Delhi](source) to [Kanpur](destination) on [tomorrow](date)?
+    - find me a bus from [Delhi](source) to [Kanpur](destination) on [tomorrow](date)
+    - I need a ticket from [Delhi](source) to [Kanpur](destination) on [tomorrow](date)
+    - buses from [Delhi](source) to [Kanpur](destination) on [tomorrow](date)
+    - any available buses from [Delhi](source) to [Kanpur](destination) on [tomorrow](date)?
+    - book a bus from [Delhi](source) to [Kanpur](destination) on [25-10-2025](date)
+    - show me buses from [Delhi](source) to [Kanpur](destination) on [25-10-2025](date)
+    - are there buses from [Delhi](source) to [Kanpur](destination) on [25-10-2025](date)?
+    - find me a bus from [Delhi](source) to [Kanpur](destination) on [25-10-2025](date)
+    - I need a ticket from [Delhi](source) to [Kanpur](destination) on [25-10-2025](date)
+    - buses from [Delhi](source) to [Kanpur](destination) on [25-10-2025](date)
+    - any available buses from [Delhi](source) to [Kanpur](destination) on [25-10-2025](date)?
+    - book a bus from [Delhi](source) to [Kanpur](destination) on [26/10/2025](date)
+    - show me buses from [Delhi](source) to [Kanpur](destination) on [26/10/2025](date)
+    - are there buses from [Delhi](source) to [Kanpur](destination) on [26/10/2025](date)?
+    - find me a bus from [Delhi](source) to [Kanpur](destination) on [26/10/2025](date)
+    - I need a ticket from [Delhi](source) to [Kanpur](destination) on [26/10/2025](date)
+    - buses from [Delhi](source) to [Kanpur](destination) on [26/10/2025](date)
+    - any available buses from [Delhi](source) to [Kanpur](destination) on [26/10/2025](date)?
+    - book a bus from [Delhi](source) to [Kanpur](destination) on [next Monday](date)
+    - show me buses from [Delhi](source) to [Kanpur](destination) on [next Monday](date)
+    - are there buses from [Delhi](source) to [Kanpur](destination) on [next Monday](date)?
+    - find me a bus from [Delhi](source) to [Kanpur](destination) on [next Monday](date)
+    - I need a ticket from [Delhi](source) to [Kanpur](destination) on [next Monday](date)
+    - buses from [Delhi](source) to [Kanpur](destination) on [next Monday](date)
+    - any available buses from [Delhi](source) to [Kanpur](destination) on [next Monday](date)?
+    - book a bus from [Delhi](source) to [Kanpur](destination) on [Sunday](date)
+    - show me buses from [Delhi](source) to [Kanpur](destination) on [Sunday](date)
+    - are there buses from [Delhi](source) to [Kanpur](destination) on [Sunday](date)?
+    - find me a bus from [Delhi](source) to [Kanpur](destination) on [Sunday](date)
+    - I need a ticket from [Delhi](source) to [Kanpur](destination) on [Sunday](date)
+    - buses from [Delhi](source) to [Kanpur](destination) on [Sunday](date)
+    - any available buses from [Delhi](source) to [Kanpur](destination) on [Sunday](date)?
+    - book a bus from [Mumbai](source) to [Delhi](destination) on [today](date)
+    - show me buses from [Mumbai](source) to [Delhi](destination) on [today](date)
+    - are there buses from [Mumbai](source) to [Delhi](destination) on [today](date)?
+    - find me a bus from [Mumbai](source) to [Delhi](destination) on [today](date)
+    - I need a ticket from [Mumbai](source) to [Delhi](destination) on [today](date)
+    - buses from [Mumbai](source) to [Delhi](destination) on [today](date)
+    - any available buses from [Mumbai](source) to [Delhi](destination) on [today](date)?
+    - book a bus from [Mumbai](source) to [Delhi](destination) on [tomorrow](date)
+    - show me buses from [Mumbai](source) to [Delhi](destination) on [tomorrow](date)
+    - are there buses from [Mumbai](source) to [Delhi](destination) on [tomorrow](date)?
+    - find me a bus from [Mumbai](source) to [Delhi](destination) on [tomorrow](date)
+    - I need a ticket from [Mumbai](source) to [Delhi](destination) on [tomorrow](date)
+    - buses from [Mumbai](source) to [Delhi](destination) on [tomorrow](date)
+    - any available buses from [Mumbai](source) to [Delhi](destination) on [tomorrow](date)?
+    - book a bus from [Mumbai](source) to [Delhi](destination) on [25-10-2025](date)
+    - show me buses from [Mumbai](source) to [Delhi](destination) on [25-10-2025](date)
+    - are there buses from [Mumbai](source) to [Delhi](destination) on [25-10-2025](date)?
+    - find me a bus from [Mumbai](source) to [Delhi](destination) on [25-10-2025](date)
+    - I need a ticket from [Mumbai](source) to [Delhi](destination) on [25-10-2025](date)
+    - buses from [Mumbai](source) to [Delhi](destination) on [25-10-2025](date)
+    - any available buses from [Mumbai](source) to [Delhi](destination) on [25-10-2025](date)?
+    - book a bus from [Mumbai](source) to [Delhi](destination) on [26/10/2025](date)
+    - show me buses from [Mumbai](source) to [Delhi](destination) on [26/10/2025](date)
+    - are there buses from [Mumbai](source) to [Delhi](destination) on [26/10/2025](date)?
+    - find me a bus from [Mumbai](source) to [Delhi](destination) on [26/10/2025](date)
+    - I need a ticket from [Mumbai](source) to [Delhi](destination) on [26/10/2025](date)
+    - buses from [Mumbai](source) to [Delhi](destination) on [26/10/2025](date)
+    - any available buses from [Mumbai](source) to [Delhi](destination) on [26/10/2025](date)?
+    - book a bus from [Mumbai](source) to [Delhi](destination) on [next Monday](date)
+    - show me buses from [Mumbai](source) to [Delhi](destination) on [next Monday](date)
+    - are there buses from [Mumbai](source) to [Delhi](destination) on [next Monday](date)?
+    - find me a bus from [Mumbai](source) to [Delhi](destination) on [next Monday](date)
+    - I need a ticket from [Mumbai](source) to [Delhi](destination) on [next Monday](date)
+    - buses from [Mumbai](source) to [Delhi](destination) on [next Monday](date)
+    - any available buses from [Mumbai](source) to [Delhi](destination) on [next Monday](date)?
+    - book a bus from [Mumbai](source) to [Delhi](destination) on [Sunday](date)
+    - show me buses from [Mumbai](source) to [Delhi](destination) on [Sunday](date)
+    - are there buses from [Mumbai](source) to [Delhi](destination) on [Sunday](date)?
+    - find me a bus from [Mumbai](source) to [Delhi](destination) on [Sunday](date)
+    - I need a ticket from [Mumbai](source) to [Delhi](destination) on [Sunday](date)
+    - buses from [Mumbai](source) to [Delhi](destination) on [Sunday](date)
+    - any available buses from [Mumbai](source) to [Delhi](destination) on [Sunday](date)?
+    - book a bus from [Mumbai](source) to [Pune](destination) on [today](date)
+    - show me buses from [Mumbai](source) to [Pune](destination) on [today](date)
+    - are there buses from [Mumbai](source) to [Pune](destination) on [today](date)?
+    - find me a bus from [Mumbai](source) to [Pune](destination) on [today](date)
+    - I need a ticket from [Mumbai](source) to [Pune](destination) on [today](date)
+    - buses from [Mumbai](source) to [Pune](destination) on [today](date)
+    - any available buses from [Mumbai](source) to [Pune](destination) on [today](date)?
+    - book a bus from [Mumbai](source) to [Pune](destination) on [tomorrow](date)
+    - show me buses from [Mumbai](source) to [Pune](destination) on [tomorrow](date)
+    - are there buses from [Mumbai](source) to [Pune](destination) on [tomorrow](date)?
+    - find me a bus from [Mumbai](source) to [Pune](destination) on [tomorrow](date)
+    - I need a ticket from [Mumbai](source) to [Pune](destination) on [tomorrow](date)
+    - buses from [Mumbai](source) to [Pune](destination) on [tomorrow](date)
+    - any available buses from [Mumbai](source) to [Pune](destination) on [tomorrow](date)?
+    - book a bus from [Mumbai](source) to [Pune](destination) on [25-10-2025](date)
+    - show me buses from [Mumbai](source) to [Pune](destination) on [25-10-2025](date)
+    - are there buses from [Mumbai](source) to [Pune](destination) on [25-10-2025](date)?
+    - find me a bus from [Mumbai](source) to [Pune](destination) on [25-10-2025](date)
+    - I need a ticket from [Mumbai](source) to [Pune](destination) on [25-10-2025](date)
+    - buses from [Mumbai](source) to [Pune](destination) on [25-10-2025](date)
+    - any available buses from [Mumbai](source) to [Pune](destination) on [25-10-2025](date)?
+    - book a bus from [Mumbai](source) to [Pune](destination) on [26/10/2025](date)
+    - show me buses from [Mumbai](source) to [Pune](destination) on [26/10/2025](date)
+    - are there buses from [Mumbai](source) to [Pune](destination) on [26/10/2025](date)?
+    

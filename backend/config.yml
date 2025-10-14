@@ -1,0 +1,19 @@
+recipe: default.v1
+language: en
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+  epochs: 100
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 100
+- name: RegexEntityExtractor
+  case_sensitive: False
+
+
+policies:
+- name: RulePolicy
+assistant_id: 20250923-155643-pointed-coach

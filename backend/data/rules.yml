@@ -1,0 +1,20 @@
+version: "3.1"
+rules:
+- rule: Greet
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Activate bus form
+  steps:
+    - intent: check_bus_availability
+    - action: bus_form
+    - active_loop: bus_form
+
+- rule: Submit bus form
+  condition:
+    - active_loop: bus_form
+  steps:
+    - action: bus_form
+    - active_loop: null
+    - action: utter_submit

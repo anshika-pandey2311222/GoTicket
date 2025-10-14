@@ -1,0 +1,18 @@
+#chat-launcher {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#chat-launcher img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+#chat-launcher img:hover {
+  transform: scale(1.1);
+}

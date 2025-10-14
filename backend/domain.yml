@@ -1,0 +1,60 @@
+version: '3.1'
+intents:
+- greet
+- check_bus_availability
+entities:
+- source
+- destination
+- date
+slots:
+  source:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: source
+  destination:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: destination
+  date:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: date
+forms:
+  bus_form:
+    required_slots:
+    - source
+    - destination
+    - date
+responses:
+  utter_greet:
+  - text: Hey there! 👋 How can I help you today?
+  - text: Hello! Ready to plan your trip?
+  - text: Hi, I’m Tixie — your travel assistant!
+  - text: Good day! Where would you like to go?
+  utter_ask_source:
+  - text: From which city are you traveling?
+  utter_ask_destination:
+  - text: Where do you want to go?
+  utter_ask_date:
+  - text: On which date do you want to travel?
+  utter_submit:
+  - text: Got it! Let me check buses from {source} to {destination} on {date}.
+  utter_check_bus_availability:
+  - text: Let me check the bus options for you!
+  - text: Sure, I’ll find the available buses.
+  - text: One moment — fetching bus schedules for your route.
+  - text: Let’s see what buses are available for your journey.
+  - text: Checking for buses right away!
+  utter_goodbye:
+  - text: Safe travels! ✈️
+  - text: Goodbye! Hope to assist you again soon.
+  - text: Take care! 👋
+  - text: See you later, happy journey!
+  utter_ask_fare:
+  - text: Let me check the fare details for you.
+  - text: Here’s what I found for your route’s fare.
+  - text: Fetching current ticket prices...
+  - text: Checking fare information right now!

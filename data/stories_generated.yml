@@ -1,0 +1,82 @@
+- version: '3.1'
+  stories:
+  - story: greet_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_2
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_3
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_4
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_5
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_6
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_7
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_8
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_9
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: greet_story_10
+    steps:
+    - intent: greet
+    - action: utter_greet
+  - story: check_bus_availability_story_1
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_2
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_3
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_4
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_5
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_6
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_7
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_8
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_9
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
+  - story: check_bus_availability_story_10
+    steps:
+    - intent: check_bus_availability
+    - action: utter_check_bus_availability
